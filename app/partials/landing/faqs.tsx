@@ -18,7 +18,7 @@ const Faqs = (): React.ReactNode => {
 
         <Accordion type="single" collapsible className="w-full mt-4">
           <AccordionItem value="item-1">
-            <AccordionTrigger>Is QuizzyMind free to use?</AccordionTrigger>
+            <AccordionTrigger>Is Quizzify free to use?</AccordionTrigger>
             <AccordionContent>
               Yes! we offer you top notch quizzes free of charge.
             </AccordionContent>
@@ -42,7 +42,7 @@ const Faqs = (): React.ReactNode => {
           </AccordionItem>
           <AccordionItem value="item-4">
             <AccordionTrigger>
-              Can I use QuizzyMind on my phone or tablet?
+              Can I use Quizzify on my phone or tablet?
             </AccordionTrigger>
             <AccordionContent>
               Yes! Quiz is fully responsive and works smoothly on mobile
