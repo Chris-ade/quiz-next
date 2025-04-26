@@ -55,17 +55,8 @@ const Header = (): React.ReactNode => {
                   transition
                   className="absolute inset-x-0 top-full mt-4 flex origin-top flex-col rounded-2xl bg-white p-4 text-lg tracking-tight text-slate-900 shadow-xl ring-1 ring-slate-900/5 data-closed:scale-95 data-closed:opacity-0 data-enter:duration-150 data-enter:ease-out data-leave:duration-100 data-leave:ease-in"
                 >
-                  <a className="block w-full p-2" href="#">
-                    Insights
-                  </a>
-                  <a className="block w-full p-2" href="#">
-                    About
-                  </a>
-                  <a className="block w-full p-2" href="#">
-                    Features
-                  </a>
-                  <a className="block w-full p-2" href="#">
-                    Sign in
+                  <a className="block w-full p-2" href="/login">
+                    <i className="far fa-sign-in mr-2" /> Login
                   </a>
                 </PopoverPanel>
               </Popover>
