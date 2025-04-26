@@ -74,30 +74,40 @@ export default function LeaderBoard() {
               <TableHead className="w-[100px]"></TableHead>
               <TableHead>Name</TableHead>
               <TableHead>Score</TableHead>
-              <TableHead className="text-right">Time</TableHead>
+              <TableHead>Time</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
-            {scores.map((score, index) => (
-              <TableRow key={score.id}>
-                <TableCell className="w-[10%] py-4">
-                  {index + 1 === 1 && (
-                    <i className="fad fa-trophy text-lg text-[#ffd700]" />
-                  )}
-                  {index + 1 === 2 && (
-                    <i className="fad fa-medal text-lg text-[#c0c0c0]" />
-                  )}
-                  {index + 1 === 3 && (
-                    <i className="fad fa-medal text-[#cd7f32]" />
-                  )}
-                </TableCell>
-                <TableCell className="py-4">{score.user.name}</TableCell>
-                <TableCell className="py-4">{score.value}%</TableCell>
-                <TableCell className="text-right py-4">
-                  {formatTime(600 - score.timeTaken)}
+            {loading ? (
+              <TableRow>
+                <TableCell className="py-4 text-center" colSpan={4}>
+                  Loading scores...
                 </TableCell>
               </TableRow>
-            ))}
+            ) : (
+              <>
+                {scores.map((score, index) => (
+                  <TableRow key={score.id}>
+                    <TableCell className="w-[10%] py-4">
+                      {index + 1 === 1 && (
+                        <i className="fad fa-trophy text-lg text-[#ffd700]" />
+                      )}
+                      {index + 1 === 2 && (
+                        <i className="fad fa-medal text-lg text-[#c0c0c0]" />
+                      )}
+                      {index + 1 === 3 && (
+                        <i className="fad fa-medal text-[#cd7f32]" />
+                      )}
+                    </TableCell>
+                    <TableCell className="py-4">{score.user.name}</TableCell>
+                    <TableCell className="py-4">{score.value}%</TableCell>
+                    <TableCell className="text-right py-4">
+                      {formatTime(600 - score.timeTaken)}
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </>
+            )}
           </TableBody>
         </Table>
       </section>
