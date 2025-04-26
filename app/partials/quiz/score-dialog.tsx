@@ -75,7 +75,7 @@ const ScoreDialog = ({
             <DialogTitle className="mt-8 flex flex-col gap-5 text-center">
               <i
                 className={`fad ${
-                  correctCount > 14
+                  correctCount >= 14
                     ? "fa-check-circle text-primary"
                     : "fa-times-circle text-destructive"
                 } text-[98px]`}
@@ -83,10 +83,10 @@ const ScoreDialog = ({
               <div>
                 <span
                   className={`text-xl font-bold text-center ${
-                    correctCount > 14 ? "text-primary" : "text-destructive"
+                    correctCount >= 14 ? "text-primary" : "text-destructive"
                   }`}
                 >
-                  {correctCount > 14 ? "You passed!" : "You failed!"}
+                  {correctCount >= 14 ? "You passed!" : "You failed!"}
                 </span>
 
                 <div className="flex gap-1 mt-5 mb-1 py-4 px-6 border-[#ccc] border-2 rounded-md max-w-[75%] mx-auto">
@@ -94,7 +94,7 @@ const ScoreDialog = ({
                   <span>Score Gained</span>
                   <span
                     className={`${
-                      correctCount > 14 ? "text-primary" : "text-destructive"
+                      correctCount >= 14 ? "text-primary" : "text-destructive"
                     } font-bold ml-auto`}
                   >
                     {score}
@@ -106,7 +106,7 @@ const ScoreDialog = ({
                   <span>Correct Answers</span>
                   <span
                     className={`${
-                      correctCount > 14 ? "text-primary" : "text-destructive"
+                      correctCount >= 14 ? "text-primary" : "text-destructive"
                     } font-bold ml-auto`}
                   >
                     {correctCount}
@@ -145,7 +145,7 @@ const ScoreDialog = ({
           <DrawerTitle className="flex flex-col gap-5 text-center">
             <i
               className={`fad ${
-                correctCount > 14
+                correctCount >= 14
                   ? "fa-check-circle text-primary"
                   : "fa-times-circle text-destructive"
               } text-[98px]`}
@@ -153,17 +153,17 @@ const ScoreDialog = ({
             <div>
               <span
                 className={`text-xl font-bold text-center ${
-                  correctCount > 14 ? "text-primary" : "text-destructive"
+                  correctCount >= 14 ? "text-primary" : "text-destructive"
                 }`}
               >
-                {correctCount > 14 ? "You passed!" : "You failed!"}
+                {correctCount >= 14 ? "You passed!" : "You failed!"}
               </span>
               <div className="flex gap-1 mt-5 mb-1 py-4 px-6 border-[#ccc] border-2 rounded-md mx-auto">
                 <i className="fad fa-star mr-3 text-primary" />
                 <span>Score Gained</span>
                 <span
                   className={`${
-                    correctCount > 14 ? "text-primary" : "text-destructive"
+                    correctCount >= 14 ? "text-primary" : "text-destructive"
                   } font-bold ml-auto`}
                 >
                   {score}
@@ -175,7 +175,7 @@ const ScoreDialog = ({
                 <span>Correct Answers</span>
                 <span
                   className={`${
-                    correctCount > 14 ? "text-primary" : "text-destructive"
+                    correctCount >= 14 ? "text-primary" : "text-destructive"
                   } font-bold ml-auto`}
                 >
                   {correctCount}
