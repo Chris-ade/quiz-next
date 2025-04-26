@@ -96,8 +96,10 @@ export default function LeaderBoard() {
                         <i className="fad fa-medal text-lg text-[#c0c0c0]" />
                       )}
                       {index + 1 === 3 && (
-                        <i className="fad fa-medal text-[#cd7f32]" />
+                        <i className="fad fa-medal text-lg text-[#cd7f32]" />
                       )}
+
+                      {index + 1 > 3 && <span>#{index + 1}</span>}
                     </TableCell>
                     <TableCell className="py-4">{score.user.name}</TableCell>
                     <TableCell className="py-4">{score.value}%</TableCell>
