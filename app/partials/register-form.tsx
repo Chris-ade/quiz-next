@@ -28,7 +28,7 @@ const RegisterForm = ({
     /^[A-Za-z]{2,}(?:[-'][A-Za-z]{2,})*(?: [A-Za-z]{2,}(?:[-'][A-Za-z]{2,})*)*$/;
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const passwordRegex =
-    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{8,}$/;
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z\d\s]).{8,}$/;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
