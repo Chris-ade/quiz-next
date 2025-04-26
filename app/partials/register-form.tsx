@@ -24,7 +24,8 @@ const RegisterForm = ({
   const { registerUser } = useAuth();
   const [showPassword, setShowPassword] = useState(false);
 
-  const nameRegex = /^[A-Za-z]{2,}(?: [A-Za-z]{2,})+$/;
+  const nameRegex =
+    /^[A-Za-z]{2,}(?:[-'][A-Za-z]{2,})*(?: [A-Za-z]{2,}(?:[-'][A-Za-z]{2,})*)*$/;
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const passwordRegex =
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$#!%*?&]{8,}$/;
