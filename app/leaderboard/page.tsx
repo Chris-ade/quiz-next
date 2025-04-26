@@ -74,7 +74,7 @@ export default function LeaderBoard() {
               <TableHead className="w-[100px]"></TableHead>
               <TableHead>Name</TableHead>
               <TableHead>Score</TableHead>
-              <TableHead>Time</TableHead>
+              <TableHead className="text-right">Time</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
