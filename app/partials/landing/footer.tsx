@@ -32,7 +32,7 @@ const Footer = (): React.ReactNode => {
             </a>
           </div>
           <p className="mt-6 text-sm text-slate-500 sm:mt-0">
-            Copyright © 2025 Quiz. All rights reserved.
+            Copyright © 2025 Quizzify. All rights reserved.
           </p>
         </div>
       </div>

@@ -15,7 +15,7 @@ const Header = (): React.ReactNode => {
               <div className="flex h-8 w-8 items-center justify-center rounded-md bg-primary text-primary-foreground">
                 <i className="fad fa-comments-alt" />
               </div>
-              Quiz
+              Quizzify
             </a>
             <div className="hidden md:flex md:gap-x-6">
               <a

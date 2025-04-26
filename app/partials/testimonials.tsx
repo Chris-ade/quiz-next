@@ -1,5 +1,7 @@
 "use client";
 
+import UserAvatar from "./home/avatar";
+
 export default function Testimonials() {
   const testimonials = [
     {
@@ -7,48 +9,38 @@ export default function Testimonials() {
         "I never thought studying could be this fun. The quizzes are super interactive and help me retain info way better than just reading notes.",
       name: "Samantha Littel",
       title: "Student",
-      image:
-        "/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-3.04d4fbac.png&w=96&q=75",
     },
     {
       quote:
         "I'm addicted! I started with the engineering trivia and now I’m learning things I never thought I’d care about. It’s like social media for your brain.",
-      name: "Mr. Paul Hackett",
+      name: "Paul Tyler",
       title: "Educator",
-      image:
-        "/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-7.74b6c9eb.png&w=96&q=75",
     },
     {
       quote:
         "Clean interface, smart quiz, and zero boring moments. I use it during lunch breaks at work to keep my brain sharp.",
       name: "Joe Allen",
       title: "Bootcamp Instructor",
-      image:
-        "/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-5.9d5329f1.png&w=96&q=75",
     },
     {
       quote:
         "The progress tracking feature is amazing. It’s motivating to see my improvement over time, especially when prepping for exams.",
       name: "Steven Hackett",
-      title: "Bootcamp Instructor",
-      image:
-        "/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-5.9d5329f1.png&w=96&q=75",
+      title: "Software Engineer",
     },
 
     {
       quote:
         "Finally an app where learning feels like a game. My kids and I play quizzes together every evening—it’s become our new family habit.",
-      name: "Michael Scofield",
-      title: "Bootcamp Instructor",
-      image:
-        "/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-5.9d5329f1.png&w=96&q=75",
+      name: "Michael Scoffman",
+      title: "Teacher",
     },
 
     {
       quote:
         "I was just looking for a quick quiz app, but this turned into my go-to study tool. The explanations after each question make a huge difference.",
-      name: "Sarah TenCredi",
-      title: "Bootcamp Instructor",
+      name: "Sarah Hamilton",
+      title: "Student",
       image:
         "/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-5.9d5329f1.png&w=96&q=75",
     },
@@ -119,15 +111,7 @@ export default function Testimonials() {
                 </blockquote>
                 <figcaption className="mt-6 flex items-center">
                   <div className="overflow-hidden rounded-full bg-slate-50">
-                    <img
-                      alt=""
-                      loading="lazy"
-                      decoding="async"
-                      className="h-12 w-12 object-cover"
-                      src={testimonial.image}
-                      width="48"
-                      height="48"
-                    />
+                    <UserAvatar name={testimonial.name} />
                   </div>
                   <div className="ml-4">
                     <div className="text-base/6 font-medium tracking-tight text-slate-900">

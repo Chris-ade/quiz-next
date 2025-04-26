@@ -15,7 +15,7 @@ export default function RegisterPage() {
   }
 
   const texts = [
-    "<span>Quiz</span> is a modern quiz app designed to make learning fun, engaging, and rewarding.",
+    "<span>Quizzify</span> is a modern quiz app designed to make learning fun, engaging, and rewarding.",
     "<span>Whether</span> you're a student, a trivia lover, or just curious, our platform brings learning to life.",
     "<span>Enjoy</span> fun and interactive quizzes based on STEM.",
     "<span>Get</span> insights and stats that show how you're improving over time.",

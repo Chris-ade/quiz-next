@@ -342,7 +342,7 @@ button {
   background-color: #fafafa;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
   border-top: 1px solid #ccc;
   height: 65px;
 }

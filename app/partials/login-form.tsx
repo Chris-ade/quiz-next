@@ -14,6 +14,7 @@ const LoginForm = ({
   const [pending, setPending] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   const { loginUser } = useAuth();
 
@@ -31,6 +32,8 @@ const LoginForm = ({
       setPending(false);
     }
   };
+
+  const togglePassword = () => setShowPassword((prev) => !prev);
 
   return (
     <form
@@ -60,13 +63,24 @@ const LoginForm = ({
         <div className="grid gap-2">
           <Input
             id="password"
-            type="password"
+            type={showPassword ? "text" : "password"}
             placeholder="Password"
             className="h-12"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
           />
+          <span
+            className="inline-block rounded-lg px-2 py-1 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900 cursor-pointer"
+            onClick={togglePassword}
+          >
+            <i
+              className={`fad ${
+                showPassword ? "fa-lock" : "fa-lock-open"
+              } mr-2`}
+            />
+            {showPassword ? "Hide" : "Show"} password
+          </span>
         </div>
         <Button
           className="w-full hover:outline-primary hover:text-primary"
@@ -74,14 +88,6 @@ const LoginForm = ({
         >
           {pending ? "Logging in..." : "Login"}
         </Button>
-      </div>
-      <div className="flex items-center">
-        <a
-          href="#"
-          className="mx-auto text-sm underline-offset-4 hover:underline"
-        >
-          Forgot your password?
-        </a>
       </div>
       <div className="text-center text-sm">
         Don&apos;t have an account?{" "}

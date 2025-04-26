@@ -7,7 +7,7 @@ import { useAuth } from "../context/AuthContext";
 import { getToken, getUserData, updateToken, updateUserData } from "./vault";
 import { jwtDecode } from "jwt-decode";
 
-const baseURL = process.env.NEXT_PUBLIC_API_BASE_URL;
+const baseURL = process.env.NEXT_PUBLIC_API_URL;
 
 const useAxios = () => {
   const { setUser } = useAuth();
@@ -17,7 +17,7 @@ const useAxios = () => {
       baseURL,
     });
 
-    instance.interceptors.request.use(async (req) => {
+    instance.interceptors.request.use(async (req: any) => {
       const authTokens = await getToken();
 
       if (!authTokens) {
@@ -33,27 +33,7 @@ const useAxios = () => {
         return req;
       }
 
-      try {
-        const response = await axios.post(`${baseURL}/auth/refresh/`, {
-          refresh: authTokens.refresh,
-        });
-
-        if (response.data.code === "token_not_valid") {
-          window.location.href = "/login";
-          return Promise.reject(new Error("Token not valid"));
-        }
-
-        await updateToken(response.data);
-        const newUserData = jwtDecode(response.data.access);
-        await updateUserData(newUserData);
-        setUser(newUserData);
-
-        req.headers.Authorization = `Bearer ${response.data.access}`;
-        return req;
-      } catch (error) {
-        window.location.href = "/login";
-        return Promise.reject(error);
-      }
+      window.location.href = "/login";
     });
 
     return instance;

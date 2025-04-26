@@ -4,7 +4,7 @@ import { verifyPassword, signToken, res, signRefreshToken } from "@/lib/auth";
 export async function POST(request: Request) {
   const { email, password } = await request.json();
 
-  const user = await prisma.users.findUnique({ where: { email } });
+  const user = await prisma.user.findUnique({ where: { email } });
   if (!user || !verifyPassword(password, user.password)) {
     return res({ success: false, message: "Invalid credentials" }, 401);
   }

@@ -14,7 +14,7 @@ const Logo = ({ centered = false }: LogoType): React.ReactNode => (
       <div className="flex h-8 w-8 items-center justify-center rounded-md bg-primary text-primary-foreground">
         <i className="fad fa-comments-alt" />
       </div>
-      Quiz
+      Quizzify
     </Link>
   </>
 );

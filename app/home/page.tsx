@@ -1,8 +1,6 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import useAxios from "../utils/useAxios";
-import { useEffect } from "react";
 import Header from "../partials/home/header";
 import PrivateRoute from "../utils/PrivateRoute";
 import Link from "next/link";
@@ -12,27 +10,6 @@ export default function Home() {
   const { user } = useAuth();
   const api = useAxios();
 
-  const fetchQuiz = async () => {
-    try {
-      const response = await api.get(
-        "https://opentdb.com/api.php?amount=20&category=19&type=multiple",
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
-
-      console.log(response);
-    } catch (e) {
-      console.error(e);
-    }
-  };
-
-  useEffect(() => {
-    // fetchQuiz();
-  });
-
   return (
     <PrivateRoute>
       <Header />
@@ -41,6 +18,11 @@ export default function Home() {
           <h4 className="font-bold">Welcome back, {user?.name}</h4>
           <p>Choose the category you're interested in</p>
         </div>
+
+        <div className="my-4 text-center">
+          <i className="far fa-chevron-down" />
+        </div>
+
         <div className="grid md:grid-cols-2 gap-8">
           <Link href="/quiz/science" className="is-category-box">
             <div className="box-content">

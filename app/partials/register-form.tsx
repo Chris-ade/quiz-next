@@ -22,6 +22,7 @@ const RegisterForm = ({
   }>({});
 
   const { registerUser } = useAuth();
+  const [showPassword, setShowPassword] = useState(false);
 
   const nameRegex = /^[A-Za-z]{2,}(?: [A-Za-z]{2,})+$/;
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -61,6 +62,8 @@ const RegisterForm = ({
     }
   };
 
+  const togglePassword = () => setShowPassword((prev) => !prev);
+
   return (
     <form
       onSubmit={handleSubmit}
@@ -94,7 +97,6 @@ const RegisterForm = ({
         <div className="grid my-3">
           <Input
             id="email"
-            name="email"
             type="email"
             placeholder="E-mail"
             className="h-12"
@@ -110,14 +112,24 @@ const RegisterForm = ({
         <div className="grid my-3">
           <Input
             id="password"
-            name="password"
-            type="password"
+            type={showPassword ? "text" : "password"}
             placeholder="Password"
             className="h-12"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
           />
+          <span
+            className="mb-2 inline-block rounded-lg px-2 py-1 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900 cursor-pointer"
+            onClick={togglePassword}
+          >
+            <i
+              className={`fad ${
+                showPassword ? "fa-lock" : "fa-lock-open"
+              } mr-2`}
+            />
+            {showPassword ? "Hide" : "Show"} password
+          </span>
           {errors.password && (
             <p className="text-red-500 text-sm mt-1">{errors.password}</p>
           )}
