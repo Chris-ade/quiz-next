@@ -225,6 +225,21 @@ export default function Home() {
           )}
         </div>
 
+        <div className="fixed left-auto right-[25px] bottom-[84px]">
+          <Button
+            className="h-[40px] w-[40px] hover:outline-primary hover:text-primary"
+            onClick={() => {
+              window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+              });
+            }}
+            title="Scroll to top"
+          >
+            <i className="fas fa-chevron-up text-lg"></i>
+          </Button>
+        </div>
+
         {/* Summary */}
         {isCompleted && page === 1 && (
           <ScoreDialog
