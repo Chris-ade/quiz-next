@@ -41,8 +41,6 @@ export default function Testimonials() {
         "I was just looking for a quick quiz app, but this turned into my go-to study tool. The explanations after each question make a huge difference.",
       name: "Sarah Hamilton",
       title: "Student",
-      image:
-        "/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-5.9d5329f1.png&w=96&q=75",
     },
   ];
 
@@ -73,15 +71,7 @@ export default function Testimonials() {
                 </blockquote>
                 <figcaption className="mt-6 flex items-center">
                   <div className="overflow-hidden rounded-full bg-slate-50">
-                    <img
-                      alt=""
-                      loading="lazy"
-                      decoding="async"
-                      className="h-12 w-12 object-cover"
-                      src={testimonial.image}
-                      width="48"
-                      height="48"
-                    />
+                    <UserAvatar name={testimonial.name} />
                   </div>
                   <div className="ml-4">
                     <div className="text-base/6 font-medium tracking-tight text-slate-900">
