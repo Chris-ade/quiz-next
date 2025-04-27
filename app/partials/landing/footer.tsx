@@ -6,8 +6,17 @@ const Footer = (): React.ReactNode => {
           <div className="flex gap-x-6">
             <a
               className="group"
+              aria-label="My Portfolio"
+              href="https://chrisdev-bay.vercel.app"
+              target="_blank"
+            >
+              <i className="far fa-globe text-slate-500 group-hover:text-slate-700"></i>
+            </a>
+            <a
+              className="group"
               aria-label="Chris on X"
               href="https://x.com/chris_adeh"
+              target="_blank"
             >
               <svg
                 className="h-6 w-6 fill-slate-500 group-hover:fill-slate-700"
@@ -21,6 +30,7 @@ const Footer = (): React.ReactNode => {
               className="group"
               aria-label="Chris on GitHub"
               href="https://github.com/Chris-ade"
+              target="_blank"
             >
               <svg
                 className="h-6 w-6 fill-slate-500 group-hover:fill-slate-700"
