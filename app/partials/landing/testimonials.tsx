@@ -1,6 +1,6 @@
 "use client";
 
-import UserAvatar from "./home/avatar";
+import UserAvatar from "../home/avatar";
 
 export default function Testimonials() {
   const testimonials = [
@@ -45,7 +45,7 @@ export default function Testimonials() {
   ];
 
   return (
-    <section className="py-8 sm:py-10 lg:py-16">
+    <section className="py-8 sm:py-10 lg:py-16" id="testimonials">
       <div className="mx-auto px-4 sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12 text-center">
         <h2 className="font-display text-4xl font-bold tracking-tight text-slate-900">
           Some kind words from our users...
@@ -118,7 +118,16 @@ export default function Testimonials() {
         </ul>
 
         <div className="mt-16 flex justify-center">
-          <button className="flex items-center text-base font-medium tracking-tight text-slate-900 hover:text-slate-700">
+          <button
+            className="flex items-center text-base font-medium tracking-tight text-slate-900 hover:text-slate-700"
+            onClick={() => {
+              const element = document.querySelector("#faqs");
+              element?.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }}
+          >
             <i className="far fa-chevron-down ml-2 text-2xl"></i>
           </button>
         </div>

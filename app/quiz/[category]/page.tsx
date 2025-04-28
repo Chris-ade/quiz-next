@@ -216,7 +216,15 @@ export default function Home() {
               {page < Math.floor(QUESTIONS_TOTAL / QUESTIONS_PER_PAGE) - 1 && (
                 <Button
                   className="h-[45px] w-[140px] align-middle justify-center hover:outline-primary hover:text-primary"
-                  onClick={() => setPage(page + 1)}
+                  onClick={() => {
+                    setPage(page + 1);
+                    setTimeout(() => {
+                      window.scrollTo({
+                        top: 0,
+                        behavior: "smooth",
+                      });
+                    }, 100);
+                  }}
                 >
                   Next <i className="fas fa-arrow-right ml-auto" />
                 </Button>

@@ -7,7 +7,7 @@ import {
 
 const Faqs = (): React.ReactNode => {
   return (
-    <section className="pb-8 sm:pb-10 lg:pb-16">
+    <section className="pb-8 sm:pb-10 lg:pb-16" id="faqs">
       <div className="mx-auto px-4 sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12">
         <h2 className="font-display text-4xl font-bold tracking-tight text-slate-900">
           Frequently asked questions...

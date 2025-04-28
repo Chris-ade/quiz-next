@@ -1,4 +1,6 @@
-import Testimonials from "../testimonials";
+"use client";
+
+import Testimonials from "./testimonials";
 import Faqs from "./faqs";
 
 const Content = (): React.ReactNode => {
@@ -41,13 +43,22 @@ const Content = (): React.ReactNode => {
 
       {/* Down arrow */}
       <div className="flex justify-center">
-        <button className="flex items-center text-base font-medium tracking-tight text-slate-900 hover:text-slate-700">
+        <button
+          className="flex items-center text-base font-medium tracking-tight text-slate-900 hover:text-slate-700"
+          onClick={() => {
+            const element = document.querySelector("#why-us");
+            element?.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }}
+        >
           <i className="far fa-chevron-down ml-2 text-2xl"></i>
         </button>
       </div>
 
       {/* Why choose us section heading */}
-      <section className="mx-auto max-w-7xl px-6 lg:px-8 mt-14">
+      <section className="mx-auto max-w-7xl px-6 lg:px-8 mt-14" id="why-us">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="font-display text-4xl font-bold tracking-tight text-slate-900">
             Why choose us?
@@ -150,7 +161,16 @@ const Content = (): React.ReactNode => {
 
       {/* Down arrow */}
       <div className="mt-10 flex justify-center">
-        <button className="flex items-center text-base font-medium tracking-tight text-slate-900 hover:text-slate-700">
+        <button
+          className="flex items-center text-base font-medium tracking-tight text-slate-900 hover:text-slate-700"
+          onClick={() => {
+            const element = document.querySelector("#testimonials");
+            element?.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }}
+        >
           <i className="far fa-chevron-down ml-2 text-2xl"></i>
         </button>
       </div>
